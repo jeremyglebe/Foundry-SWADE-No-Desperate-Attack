@@ -23,6 +23,8 @@ jobs:
         with:
           node-version: 18
 
+      - run: corepack enable
+
       - run: echo "🚀 Node has been installed!"
 
       - name: Install dependencies
