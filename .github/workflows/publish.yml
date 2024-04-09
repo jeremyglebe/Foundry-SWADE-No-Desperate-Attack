@@ -1,4 +1,5 @@
 name: Publish release
+run-name: ${{ github.actor }} - ${{ github.event.release.tag_name }}
 
 on:
   release:
@@ -8,11 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
