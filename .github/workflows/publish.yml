@@ -23,12 +23,18 @@ jobs:
         with:
           node-version: 18
 
+      - run: echo "🚀 Node has been installed!"
+
       - name: Install dependencies
         run: yarn
+
+      - run: echo "📦 Dependencies have been installed."
 
       - name: Extract tag version number
         id: get_version
         uses: battila7/get-version-action@v2
+
+      - run: echo "🔍 The version number extracted from the tag is ${{ steps.get_version.outputs.version }}"
 
       - name: Run Vite build
         env:
@@ -37,9 +43,13 @@ jobs:
           GH_TAG: ${{github.event.release.tag_name}}
         run: yarn build
 
+      - run: echo "🏗️ The build has been completed."
+
       - name: Create zip archive
         working-directory: dist
         run: zip -r ./module.zip module.json scripts/
+
+      - run: echo "📦 The zip archive has been created."
 
       - name: Update release with files
         id: create_version_release
@@ -53,3 +63,5 @@ jobs:
           artifacts: "./dist/module.json, ./dist/module.zip"
           tag: ${{ github.event.release.tag_name }}
           body: ${{ github.event.release.body }}
+
+      - run: echo "🚀 The release has been updated with the new files."
