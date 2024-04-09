@@ -1,0 +1,17 @@
+{
+  "id": "swade-no-desperate-attack",
+  "title": "SWADE: No Desperate Attack",
+  "description": "Foundry module that attempts to remove the Desperate Attack option from Savage Worlds Adventure Edition.",
+  "authors": [
+    {
+      "name": "Jeremy Glebe",
+      "email": "jeremyglebe@gmail.com"
+    }
+  ],
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "esmodules": ["scripts/module.js"]
+}

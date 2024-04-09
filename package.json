@@ -1,0 +1,18 @@
+{
+  "name": "foundry-swade-no-desperate-attack",
+  "version": "0.0.1",
+  "description": "Foundry module that attempts to remove the Desperate Attack option from Savage Worlds Adventure Edition.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "packageManager": "yarn@4.1.1",
+  "devDependencies": {
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.8"
+  }
+}
